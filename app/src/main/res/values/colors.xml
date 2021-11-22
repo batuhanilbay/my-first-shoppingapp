@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="toolbarRenk">#81c784</color>
+    <color name="buttonRenk">#ffa000</color>
+    <color name="SEPETIM">#ffd149</color>
+    <color name="menuCard">#ffd149</color>
+    <color name="yazi1">#e91e63</color>
+    <color name="menuYazi">#dd0135</color>
+    <color name="menuYazi2">#d50000</color>
+    <color name="sdasd">#ba68c8</color>
+    <color name="card2">#ff1744</color>
+    <color name="card3">#f48fb1</color>
+    <color name="yazi2">#e64a19</color>
+    <color name="sepetcart">#ffb74d</color>
+    <color name="sepetiimButonu">#ff3d00</color>
+    <color name="yaziCard">#ce93d8</color>
+</resources>

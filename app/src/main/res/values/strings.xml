@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sepetim</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Menu_ikinci_baslik">KATEGORİLER</string>
+    <string name="AnaSayfaToolbarBaslik">SEPETİm</string>
+    <string name="kullanici_adi">Batuhan İLBAY</string>
+    <string name="Menu_birinci_baslik">Hoşgeldiniz</string>
+    <string name="SepeteGitButton">Sepetim</string>
+
+</resources>

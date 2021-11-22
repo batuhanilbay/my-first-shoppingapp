@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="yemekDetayToolbarBaslik"
+            type="String"
+            />
+        <variable
+            name="detayFragment"
+            type="com.example.sepetim.fragment.DetayFragment" />
+        <variable
+            name="yemekDetayNesnesi"
+            type="com.example.sepetim.entity.Yemekler" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.DetayFragment">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="188dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/yiyecek"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription,HardcodedText" />
+
+        <TextView
+            android:id="@+id/textViewDetayId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="serif"
+            android:text="@{String.valueOf(yemekDetayNesnesi.yemek_id)}"
+            android:textAlignment="textEnd"
+            android:textColor="@color/card2"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/textViewDetayYemekAdi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="serif"
+            android:text='@{yemekDetayNesnesi.yemek_adi}'
+            android:textAlignment="textEnd"
+            android:textColor="@color/card2"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetayId" />
+
+        <TextView
+            android:id="@+id/textViewDetayYemekFiyat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="serif"
+            android:text='@{yemekDetayNesnesi.yemek_fiyat + "₺"}'
+            android:textAlignment="textEnd"
+            android:textColor="@color/card2"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetayYemekAdi" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/paytone_one"
+            android:gravity="center_vertical"
+            android:text="@{yemekDetayToolbarBaslik}"
+            android:textColor="@color/card2"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="DETAYLAR" />
+
+        <Button
+            android:id="@+id/buttonEksi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="94dp"
+            android:backgroundTint="@color/card2"
+            android:backgroundTintMode="add"
+            android:onClick="@{()->detayFragment.adetEksilt()}"
+            android:text="-"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewAdet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewAdet"
+            tools:ignore="HardcodedText,MissingConstraints" />
+
+        <Button
+            android:id="@+id/buttonArti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="94dp"
+            android:backgroundTint="@color/card2"
+            android:onClick="@{()->detayFragment.adetArttir()}"
+            android:text="+"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewAdet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewAdet"
+            tools:ignore="HardcodedText,MissingConstraints" />
+
+        <Button
+            android:id="@+id/buttonEkle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/card2"
+            android:clickable="true"
+            android:onClick="@{()->detayFragment.buttonSepeteEkle()}"
+            android:text="SEPETE EKLE"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewAdet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="sans-serif"
+            android:hint="0"
+            android:textAlignment="textStart"
+            android:textColor="@color/card2"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/buttonArti"
+            app:layout_constraintStart_toEndOf="@+id/buttonEksi"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetayYemekFiyat"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:fontFamily="@font/paytone_one"
+            android:text="Ürün ID: "
+            android:textAlignment="viewStart"
+            android:textColor="@color/card2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewDetayId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewDetayId"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:fontFamily="@font/paytone_one"
+            android:text="Ürün ADI: "
+            android:textAlignment="viewStart"
+            android:textColor="@color/card2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewDetayYemekAdi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewDetayYemekAdi"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:fontFamily="@font/paytone_one"
+            android:text="Ürün FİYAT:"
+            android:textAlignment="viewStart"
+            android:textColor="@color/card2"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewDetayYemekFiyat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewDetayYemekFiyat"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+
+    <variable
+        name="menuToolbarBaslik"
+        type="String" />
+    <variable
+        name="UrunlerBaslik"
+        type="String" />
+    <variable
+        name="HosgeldinizBaslik"
+        type="String" />
+    <variable
+        name="yemeklerAdapter"
+        type="com.example.sepetim.adapter.YemeklerAdapter" />
+    <variable
+        name="menuFragment"
+        type="com.example.sepetim.fragment.MenuFragment" />
+
+</data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.MenuFragment">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="36dp"
+            android:adapter="@{yemeklerAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.193" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/rv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.004"
+            app:title="@{menuToolbarBaslik}" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/rubik_mono_one"
+            android:text="@{HosgeldinizBaslik}"
+            android:textColor="@color/menuYazi2"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarMenu" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/rubik_mono_one"
+            android:text="@{UrunlerBaslik}"
+            android:textColor="@color/menuYazi2"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <Button
+            android:id="@+id/buttonSepet"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/sepetcart"
+            android:clickable="true"
+            android:onClick="@{() -> menuFragment.buttonTikla(buttonSepet)}"
+            android:text="Sepetim"
+            android:textColor="@color/menuYazi2"
+            android:textStyle="bold"
+            app:icon="@drawable/shopping_cart"
+            app:iconTint="@color/menuYazi2"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbarMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbarMenu"
+            app:layout_constraintVertical_bias="1.0"
+            android:focusable="true"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/lily_script_one"
+            android:text="@{menuToolbarBaslik}"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/toolbarMenu"
+            app:layout_constraintTop_toTopOf="@+id/toolbarMenu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

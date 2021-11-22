@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+
+    <variable
+        name="sepetAdapter"
+        type="com.example.sepetim.adapter.SepetAdapter" />
+    <variable
+        name="sepetBaslik"
+        type="String" />
+
+    <variable
+        name="sepetFragment"
+        type="com.example.sepetim.fragment.SepetFragment" />
+        <variable
+            name="sepetNesnesi"
+            type="com.example.sepetim.entity.SepetYemekler" />
+    <variable
+        name="sepetFragmentViewModel"
+        type="com.example.sepetim.viewmodel.SepetFragmentViewModel" />
+
+</data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.SepetFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/shopping_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar2"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription,HardcodedText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSepet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:layout_marginTop="16dp"
+
+            android:adapter="@{sepetAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{sepetBaslik}"
+            android:fontFamily="@font/paytone_one"
+            android:textColor="@color/buttonRenk"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+            app:layout_constraintStart_toStartOf="@+id/toolbar2"
+            app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+
+        <TextView
+            android:id="@+id/totalFiyat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:textColor="@color/buttonRenk"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</layout>

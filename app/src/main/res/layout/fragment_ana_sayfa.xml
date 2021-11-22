@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="anaSayfaToolbarBaslik"
+            type="String" />
+        <variable
+            name="goToMenu"
+            type="String" />
+
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.AnaSayfaFragment">
+
+
+        <Button
+            android:id="@+id/buttonAnaSayfa"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/menuCard"
+            android:text="@{goToMenu}"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/scooter"
+            app:iconPadding="20dp"
+            app:iconTint="@color/yazi1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="HardcodedText" />
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="411dp"
+            android:layout_height="269dp"
+            android:layout_marginTop="128dp"
+            android:src="@drawable/anasayfa_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textViewBaslik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/paytone_one"
+            android:gravity="center_vertical"
+            android:text="@{anaSayfaToolbarBaslik}"
+            android:textColor="@color/SEPETIM"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
